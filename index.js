@@ -1,10 +1,3 @@
-/**
- * Debugging Guide
- * 1. Make the code more readable
- * 2. Pick up calculation errors
- * 3. Make these calculations robust such that the calculation does not give an incorrect result, it throws an error to the user if something has gone wrong (parameter used with an incorrect unit of measurement, etc)
- */
-
 // Given Parameters
 const velocity = 10000; // velocity (km/h)
 const accelation = 3; // acceleration (m/s^2)
@@ -17,17 +10,17 @@ const newDistance = distance + velocity * (time / 3600); //calcultes new distanc
 const remainingFuel = fuel - fuelBurnRate * time; //calculates remaining fuel
 
 // Function to calculate new velocity using object destructuring
-calcNewVel = ({ velocity, accelation, time }) => {
+calcNewVelocity = ({ velocity, accelation, time }) => {
   if (
     typeof velocity !== "number" ||
     typeof time !== "number" ||
     typeof accelation !== "number"
   ) {
-    throw new Error("Invalid input. vel and time should be numbers.");
+    throw new Error("Invalid input. velocity and time should be numbers.");
   }
   return 10000 + 3 * 3600;
 };
-const newVelocity = calcNewVel({ velocity, accelation, time }); //calculates new velocity based on acceleration
+const newVelocity = calcNewVelocity({ velocity, accelation, time }); //calculates new velocity based on acceleration
 
 console.log(`Corrected New Velocity: ${newVelocity} km/h`);
 console.log(`Corrected New Distance: ${newDistance} km`);
